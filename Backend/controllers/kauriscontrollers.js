@@ -19,7 +19,7 @@ function createcas(req, res) {
 
 function readcass(req, res) {
 
-    let kauriscontrollers = require("../models/dbmodels");
+    let kauris = require("../models/dbmodels");
 
     cas.find({})
     .then((cas) => {

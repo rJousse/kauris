@@ -62,7 +62,7 @@ const infoLogger = loggers.get('infoLogger');
 
 //Connecting to MongoDB (async/await approach)
 const connectDb = async () => {
-    await mongoose.connect('mongodb://localhost:27017/DLUList', {useNewUrlParser: true, useUnifiedTopology : true}).then(
+    await mongoose.connect('mongodb://localhost:27017/kauris', {useNewUrlParser: true, useUnifiedTopology : true}).then(
         () => {
             console.log(chalk.green(`Connected to database`))
             infoLogger.info("Connected to database");
@@ -78,10 +78,10 @@ const connectDb = async () => {
 
   
 //Accessing the routes for the user
-const DLUListRoutes = require('./routes/DLUList');
+const kaurisRoutes = require('./routes/kauris');
 
 //Acces the routes 
-app.use('/api/v1/', DLUListRoutes);
+app.use('/api/v1/', kaurisRoutes);
 
 //When there is no route that caught the incoming request
 //use the 404 middleware

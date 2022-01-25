@@ -1,15 +1,15 @@
-function createDLUList(req, res) {
-    let DLUList = require('../models/dlu');
-    let newDLUList = DLUList ({
-        ProductName: req.body.ProductName,
-        BestBeforeDate : req.body.BestBeforeDate
+function createcas(req, res) {
+    let kauriscontrollers = require('../models/dbmodels');
+    let newcas = cas ({
+       // ProductName: req.body.ProductName,
+       // BestBeforeDate : req.body.BestBeforeDate   A CHANGER!!!!
     });
   
-    newDLUList.save()
-    .then((savedDLUList) => {
+    newcas.save()
+    .then((savedcas) => {
 
         //send back the created DLUList
-        res.json(savedDLUList);
+        res.json(savedcas);
             
     }, (err) => {
         res.status(400).json(err)
@@ -17,97 +17,66 @@ function createDLUList(req, res) {
 
 }
 
-function readDLUs(req, res) {
+function readcass(req, res) {
 
-    let DLUList = require("../models/dlu");
+    let kauriscontrollers = require("../models/dbmodels");
 
-    DLUList.find({})
-    .then((DLUList) => {
+    cas.find({})
+    .then((cas) => {
         res.status(200).json(DLUList);
     }, (err) => {
         res.status(500).json(err);
     });
  }
 
-function readDLUList(req, res) {
+function readcas(req, res) {
 
-    let DLUList = require("../models/dlu");
+    let kauriscontrollers = require("../models/dbmodels");
 
-    DLUList.findById({_id : req.params.id})
-    .then((DLUList) => {
-        res.status(200).json(DLUList);
+    cas.findById({_id : req.params.id})
+    .then((cas) => {
+        res.status(200).json(cas);
     }, (err) => {
         res.status(500).json(err);
     });
  }
 
-function readToEatWeek(req, res) {
+function updatecaslist(req, res) {
 
-    let DLUList = require("../models/dlu");
+    let kauriscontrollers = require("../models/dbmodels");
 
-    DLUList.find({}).sort('-date').BestBeforeDate
-    .then((DLUList) => {
-        res.status(200).json(DLUList);
-    }, (err) => {
-        res.status(500).json(err);
-    });
-
-}
-
-// Je ne suis pas parvenu à trouver la bonne manière d'effectuer le tri pour les produits à un mois 
-function readToEatMonth(req, res) {
-
-    let DLUList = require("../models/dlu");
-
-    DLUList.find({
-        //createdAt : 
-           //  $gte, Date(2021, MM, DD),
-           //   $lt, Date(2021, MM+1, DD),
-        }).sort('date').BestBeforeDate
-    .then((DLUList) => {
-        res.status(200).json(DLUList);
-    }, (err) => {
-        res.status(500).json(err);
-    });
-
-}
-
-function updateDLUList(req, res) {
-
-    let DLUList = require("../models/dlu");
-
-    DLUList.findByIdAndUpdate({_id: req.params.id}, 
-        {ProductName : req.body.ProductName, 
+    cas.findByIdAndUpdate({_id: req.params.id}, 
+        {//ProductName : req.body.ProductName, A CHANGER !!!!
         BestBeforeDate : req.body.BestBeforeDate}, 
         {new : true})
-    .then((updatedDLUList) => {
-        res.status(200).json(updatedDLUList);
+    .then((updatedcas) => {
+        res.status(200).json(updatedcas);
     }, (err) => {
         res.status(500).json(err);
     });
 }
 
-function deleteDLUList(req, res) {
+function deletecas(req, res) {
 
-    let DLUList = require("../models/dlu");
+    let kauriscontrollers = require("../models/dbmodels");
 
-    DLUList.findOneAndRemove({_id : req.params.id})
-    .then((deletedDLUList) => {
-        res.status(200).json(deletedDLUList);
+    cas.findOneAndRemove({_id : req.params.id})
+    .then((deletedcas) => {
+        res.status(200).json(deletedcas);
     }, (err) => {
         res.status(500).json(err);
     });
  }
 
-function eatenAlim(req, res) {
+function donecas(req, res) {
 
-    let DLUList = require("../models/dlu");
+    let kauriscontrollers = require("../models/dbmodels");
 
-    DLUList.findByIdAndUpdate({_id: req.params.id}, 
-        {eaten : true}, 
+    cas.findByIdAndUpdate({_id: req.params.id}, 
+        {done : true}, 
         {new : true})
-    .then((updatedDLUList) => {
-        res.status(200).json(updatedDLUList);
+    .then((updatedcas) => {
+        res.status(200).json(updatedcas);
     }, (err) => {
         res.status(500).json(err);
     });
@@ -116,25 +85,23 @@ function eatenAlim(req, res) {
 
 function undone(req, res) {
 
-    let DLUList = require("../models/dlu");
+    let kauriscontrollers = require("../models/dbmodels");
 
-    DLUList.findByIdAndUpdate({_id: req.params.id}, 
+    cas.findByIdAndUpdate({_id: req.params.id}, 
         {done : false}, 
         {new : true})
-    .then((updatedDLUList) => {
-        res.status(200).json(updatedDLUList);
+    .then((updatedcas) => {
+        res.status(200).json(updatedcas);
     }, (err) => {
         res.status(500).json(err);
     });
 
 }
 
-module.exports.create = createDLUList;
-module.exports.reads = readDLUs;
-module.exports.read = readDLUList;
-module.exports.shouldEatWeek = readToEatWeek;
-module.exports.shouldEatMonth = readToEatMonth;
-module.exports.delete = deleteDLUList;
-module.exports.update = updateDLUList;
-module.exports.eaten = eatenAlim;
+module.exports.create = createcas;
+module.exports.reads = readcass;
+module.exports.read = readcas;
+module.exports.delete = deletecas;
+module.exports.update = updatecaslist;
+module.exports.eaten = donecas;
 module.exports.undone = undone;

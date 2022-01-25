@@ -2,10 +2,10 @@ var mongoose = require('mongoose');
 
 var Schema = mongoose.Schema;
 
-var DLUListSchema = new Schema({
-  ProductName : String,
-  BestBeforeDate : Date,
-  eaten : {
+var casSchema = new Schema({
+  castName : String,
+  Dateposted : Date,
+  done : {
     type : Boolean,
     default : false
   },
@@ -15,4 +15,4 @@ var DLUListSchema = new Schema({
   },
 });
 
-module.exports = mongoose.model('DLUList', DLUListSchema);
+module.exports = mongoose.model('cas', casSchema);

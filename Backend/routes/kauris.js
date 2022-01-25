@@ -2,7 +2,7 @@
 const router = require('express').Router();
 
 //Access the controllers
-const controller = require('../controllers/kauris');
+const controller = require('../controllers/kauriscontrollers');
 
 //CREATE
 router.post("/cas", (req, res) => {

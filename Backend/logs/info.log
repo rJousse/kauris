@@ -74,6 +74,7 @@ Tue, 23 Mar 2021 15:45:40 GMT | INFO  | Connected to database
 Sun, 11 Apr 2021 13:23:47 GMT | INFO  | Server is running on port: 3000
 Sun, 11 Apr 2021 13:23:47 GMT | INFO  | Connected to database
 Tue, 25 Jan 2022 10:09:56 GMT | INFO  | Server is running on port: 3000
+<<<<<<< HEAD
 Tue, 25 Jan 2022 10:13:34 GMT | INFO  | Server is running on port: 3000
 Tue, 25 Jan 2022 10:13:34 GMT | INFO  | Connected to database
 Tue, 25 Jan 2022 10:14:57 GMT | INFO  | Server is running on port: 3000
@@ -90,3 +91,8 @@ Tue, 25 Jan 2022 11:31:04 GMT | INFO  | Server is running on port: 3000
 Tue, 25 Jan 2022 11:31:04 GMT | INFO  | Connected to database
 Tue, 25 Jan 2022 11:31:17 GMT | INFO  | Server is running on port: 3000
 Tue, 25 Jan 2022 11:31:17 GMT | INFO  | Connected to database
+=======
+Tue, 25 Jan 2022 10:12:06 GMT | INFO  | Server is running on port: 3000
+Tue, 25 Jan 2022 10:12:06 GMT | INFO  | Connected to database
+Tue, 25 Jan 2022 10:14:42 GMT | INFO  | Server is running on port: 3000
+>>>>>>> 5e2ed1029a59ce889c713100207f800930dd6ef6

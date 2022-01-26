@@ -47,3 +47,7 @@ Sun, 11 Apr 2021 13:30:58 GMT | ERROR  | HTTP 404: ask for:  http://localhost:30
 Sun, 11 Apr 2021 13:37:32 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/api/v1/DLUs
 Sun, 11 Apr 2021 13:38:12 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/api/v1/DLUs
 Sun, 11 Apr 2021 13:38:12 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/api/v1/DLUs
+Wed, 26 Jan 2022 08:31:52 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/cas
+Wed, 26 Jan 2022 08:55:08 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/api/v1/cas:61f10b62468ce317213bad02
+Wed, 26 Jan 2022 08:58:12 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/api/v1/cas:61f107cce710101051dc27ab
+Wed, 26 Jan 2022 08:58:30 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/api/v1/cas:%2261f107cce710101051dc27ab%22

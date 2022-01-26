@@ -1,8 +1,11 @@
 function createcas(req, res) {
-    let kauriscontrollers = require('../models/dbmodels');
+    let cas = require('../models/dbmodels');
     let newcas = cas ({
-       // ProductName: req.body.ProductName,
-       // BestBeforeDate : req.body.BestBeforeDate   A CHANGER!!!!
+        CasName: req.body.CasName,
+        DateDone: req.body.DateDone,
+        CasDescription: req.body.CasDescription,
+        done: req.body.done,
+        createdAt: req.body.createdAt,
     });
   
     newcas.save()
@@ -19,21 +22,9 @@ function createcas(req, res) {
 
 function readcass(req, res) {
 
-    let kauris = require("../models/dbmodels");
+    let cas = require("../models/dbmodels");
 
     cas.find({})
-    .then((cas) => {
-        res.status(200).json(DLUList);
-    }, (err) => {
-        res.status(500).json(err);
-    });
- }
-
-function readcas(req, res) {
-
-    let kauriscontrollers = require("../models/dbmodels");
-
-    cas.findById({_id : req.params.id})
     .then((cas) => {
         res.status(200).json(cas);
     }, (err) => {
@@ -41,13 +32,25 @@ function readcas(req, res) {
     });
  }
 
+function readcas(req, res) { // Ne fonctionne pas - ERREUR 500
+
+    let cas = require("../models/dbmodels");
+
+    cas.findById({_id : req.params.id})
+    .then((ca) => {
+        res.status(200).json(ca);
+    }, (err) => {
+        res.status(500).json(err);
+    });
+ }
+
 function updatecaslist(req, res) {
 
-    let kauriscontrollers = require("../models/dbmodels");
+    let cas = require("../models/dbmodels");
 
     cas.findByIdAndUpdate({_id: req.params.id}, 
-        {//ProductName : req.body.ProductName, A CHANGER !!!!
-        BestBeforeDate : req.body.BestBeforeDate}, 
+        {CasName : req.body.casName,
+        Done : req.body.Done}, 
         {new : true})
     .then((updatedcas) => {
         res.status(200).json(updatedcas);
@@ -58,7 +61,7 @@ function updatecaslist(req, res) {
 
 function deletecas(req, res) {
 
-    let kauriscontrollers = require("../models/dbmodels");
+    let cas = require("../models/dbmodels");
 
     cas.findOneAndRemove({_id : req.params.id})
     .then((deletedcas) => {
@@ -70,7 +73,7 @@ function deletecas(req, res) {
 
 function donecas(req, res) {
 
-    let kauriscontrollers = require("../models/dbmodels");
+    let cas = require("../models/dbmodels");
 
     cas.findByIdAndUpdate({_id: req.params.id}, 
         {done : true}, 
@@ -85,7 +88,7 @@ function donecas(req, res) {
 
 function undone(req, res) {
 
-    let kauriscontrollers = require("../models/dbmodels");
+    let cas = require("../models/dbmodels");
 
     cas.findByIdAndUpdate({_id: req.params.id}, 
         {done : false}, 

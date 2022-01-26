@@ -3,8 +3,9 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var casSchema = new Schema({
-  castName : String,
-  Dateposted : Date,
+  CasName : String,
+  DateDone : Date,
+  CasDescription : String,
   done : {
     type : Boolean,
     default : false
